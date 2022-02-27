@@ -30,9 +30,9 @@ let lightColor = (element, number) =>{
     setTimeout(() => {
         element.classList.add('selected');
     },number - 250);
-    setTimeout(() =>{
+    setTimeout(() => {
         element.classList.remove('selected');
-    })
+    }, number - 50);
 
 }
 //checa se os botões clicados são os mesmos de ordem gerada no jogo
@@ -56,7 +56,7 @@ let click = (color) => {
     createColorElement(color).classList.add('selected');
 
     setTimeout(() =>{
-        createColorElement(color).classList.remove('selected')
+        createColorElement(color).classList.remove('selected');
         checkOrder();
     },250)
 }
@@ -83,16 +83,14 @@ let nextLevel = () =>{
 //função para game over
 let gameOver = () =>{
     alert(`Pontuação: ${score}\nVocê perdeu o jogo!\nClique em Ok para iniciar um novo jogo`);
-    order = [];
-    clickedOrder = [];
-
-    playGame();
-
+    score = 0;
 }
 //função de inicio do jogo
 let playGame = () =>{
-    alert('Bem vindo ao Genius: iniciando novo jogo!');
     score = 0;
+    order = [];
+    clickedOrder = [];
+    alert('Bem vindo ao Genius: iniciando novo jogo!');
     nextLevel();
 }
 
@@ -105,4 +103,5 @@ yellow.onclick = () => click(2);
 blue.onclick = () => click(3);
 
 //inicio do jogo
-playGame();
+const btn = document.querySelector('.btn');
+btn.onclick = () => playGame();

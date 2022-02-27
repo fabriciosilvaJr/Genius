@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: rgb(208, 255, 239);
+    background-color: rgb(142, 201, 241);
 }
 
 .main-game{
@@ -14,11 +14,10 @@ body{
     display: grid;
     grid-template-areas: 'verde vermelho'
     'amarelo azul';
-    grid-gap: 10px;
+    grid-gap: 40px;
     border: 1px solid #ffffff;
     background-color: #ffffff;
     border-radius: 100%;
-   
     width: 600px;
     height: 600px;
 
@@ -28,6 +27,7 @@ body{
     grid-area: azul;
     background-color: blue;
     border-bottom-right-radius:100%;
+   
 }
 
 .red{
@@ -50,5 +50,49 @@ body{
 }
 
 .selected{
-    opacity: 0.6;
+    opacity: 0.5;
+}
+
+.menu {
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: fixed;
+    text-align: center;
+    padding: 20px;
+    color: rgb(20, 18, 18);
+    z-index: 2;
+}
+
+.menu .btn {
+    width: 100px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: rgb(142, 201, 241);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.menu .btn:hover {
+    background-color: #5bb6fc;
+    color: rgb(35, 33, 194);
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+    .genius {
+        grid-gap: 30px;
+        width: 350px;
+        height: 350px;
+    }
+
+    .menu {
+        width: 150px;
+        height: 150px;
+    }
+    .menu .btn {
+        margin-top: 20px;
+    }
 }
