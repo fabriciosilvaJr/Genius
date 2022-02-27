@@ -1,2 +1,2 @@
 # Genius
-  Jogo de memória estilo Genius
+  Desafio Jogo de memória estilo Genius da Dio
